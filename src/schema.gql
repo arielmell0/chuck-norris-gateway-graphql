@@ -4,4 +4,7 @@
 
 type Query {
   getRandomFact: String!
+  getCategories: [String!]!
+  getRandomFactByCategory(category: String!): String!
+  searchJokes(query: String!): [String!]!
 }
