@@ -23,14 +23,18 @@ export class AppService {
 
   async getRandomFactByCategory(category: string): Promise<string> {
     const response: AxiosResponse<any> = await firstValueFrom(
-      this.httpService.get(`https://api.chucknorris.io/jokes/random?category=${category}`),
+      this.httpService.get(
+        `https://api.chucknorris.io/jokes/random?category=${category}`,
+      ),
     );
     return response.data.value;
   }
 
   async searchJokes(query: string): Promise<string[]> {
     const response: AxiosResponse<any> = await firstValueFrom(
-      this.httpService.get(`https://api.chucknorris.io/jokes/search?query=${query}`),
+      this.httpService.get(
+        `https://api.chucknorris.io/jokes/search?query=${query}`,
+      ),
     );
     return response.data.result.map((joke: any) => joke.value);
   }
