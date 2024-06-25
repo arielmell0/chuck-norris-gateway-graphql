@@ -78,6 +78,11 @@ query($category: String!) {
 
 No additional configuration is required for starting the server.
 
+## Production URL
+
+The application is also available online:
+[Chuck Norris Gateway GraphQL](https://chuck-norris-gateway-graphql.onrender.com).
+
 ## Contact
 
 For questions or suggestions, contact [Ariel Oliveira de Mello](https://github.com/arielmell0).
