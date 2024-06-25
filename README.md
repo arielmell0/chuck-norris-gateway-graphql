@@ -1,73 +1,87 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Chuck Norris Gateway GraphQL
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This repository serves as a GraphQL gateway designed specifically for fetching random facts about Chuck Norris. It acts as an intermediary layer between the front-end application and the various data sources that provide Chuck Norris facts.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## How to Start the Project
 
-## Description
+To start the project locally, follow these steps:
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/arielmell0/chuck-norris-gateway-graphql.git
+    ```
 
-## Installation
+2. Navigate to the project directory:
+    ```bash
+    cd chuck-norris-gateway-graphql
+    ```
 
-```bash
-$ npm install
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+4. Start the server:
+    ```bash
+    npm run start:dev
+    ```
+
+## Features
+
+- **GraphQL API:** A GraphQL endpoint that aggregates and serves Chuck Norris facts.
+- **Category Filtering:** Supports querying facts by category.
+- **Random Fact Generation:** Provides random Chuck Norris facts.
+
+## Endpoints
+
+- `/graphql`: The main GraphQL endpoint for querying Chuck Norris facts.
+
+## Queries
+
+### Get Random Fact
+
+Fetches a random Chuck Norris fact.
+
+```graphql
+query {
+  getRandomFact
+}
 ```
 
-## Running the app
+### Get Categories
 
-```bash
-# development
-$ npm run start
+Fetches a list of categories for Chuck Norris facts.
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+```graphql
+query {
+  getCategories
+}
 ```
 
-## Test
+### Get Random Fact by Category
 
-```bash
-# unit tests
-$ npm run test
+Fetches a random Chuck Norris fact from a specified category.
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+```graphql
+query($category: String!) {
+  getRandomFactByCategory(category: $category)
+}
 ```
 
-## Support
+## Stack
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- **NestJS:** A progressive Node.js framework for building efficient and scalable server-side applications.
+- **GraphQL:** A query language for your API.
+- **Apollo Server:** A fully-featured GraphQL server with focus on easy setup and performance.
 
-## Stay in touch
+## Configuration
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+No additional configuration is required for starting the server.
 
-## License
+## Contact
 
-Nest is [MIT licensed](LICENSE).
+For questions or suggestions, contact [Ariel Oliveira de Mello](https://github.com/arielmell0).
+
+---
+
+I hope this application helps you to create a GraphQL gateway. 🚀
